@@ -51,8 +51,16 @@ test.describe('RasaSimpel end-to-end flow', () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
 
-    await expect(page.getByText('Nasi Goreng')).toBeVisible();
-    await expect(page.getByText('Mie Instan')).toBeVisible();
-    await expect(page.getByText('Bakso')).toBeVisible();
+    await expect(
+  page.getByRole('heading', { name: 'Nasi Goreng' })
+).toBeVisible();
+
+await expect(
+  page.getByRole('heading', { name: 'Mie Instan' })
+).toBeVisible();
+
+await expect(
+  page.getByRole('heading', { name: 'Bakso' })
+).toBeVisible();
   });
 });
